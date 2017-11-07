@@ -16,4 +16,11 @@ $router->addGet('/',
   ]
 );
 
+$router->addGet('/getCountryCode',
+  [
+    'controller' => 'IP',
+    'action'     => 'gcc'    
+  ]
+);
+
 $router->handle();

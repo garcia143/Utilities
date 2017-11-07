@@ -4,9 +4,6 @@ class ErrorsController extends ControllerBase {
 
   public function initialize() {
     parent::initialize();
-
-
-
   }
 
   public function notFoundAction() {
@@ -29,7 +26,7 @@ class ErrorsController extends ControllerBase {
 
     // Send Response
     $response->send();
-  
+
     // Logging
     $this->logger->error('IP Address '.$this->clientRequestIP.', User Agent '.$this->clientUserAgent.' try access with Invalid or Missing parameters.');
 
