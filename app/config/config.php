@@ -6,6 +6,8 @@
 defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: realpath(dirname(__FILE__) . '/../..'));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
+use Phalcon\Logger;
+
 return new \Phalcon\Config([
     'database' => [
         'adapter'     => 'Mysql',
@@ -26,5 +28,12 @@ return new \Phalcon\Config([
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
         'baseUri'        => '/',
+    ],
+    'logger' => [
+      'path'     => BASE_PATH . '/logs/',
+      'format'   => '%date% [%type%] %message%',
+      'date'     => 'Y-m-d H:i:s',
+      'logLevel' => Logger::DEBUG,
+      'filename' => 'application.log',
     ]
 ]);
